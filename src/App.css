@@ -1,38 +1,390 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #eef2ff;
+  color: #111827;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.dashboard {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #111827, #1e1b4b);
+  color: white;
+  padding: 30px 22px;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 30px;
+}
+
+.sidebar p {
+  color: #c7d2fe;
+  margin: 6px 0 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 15px 18px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: rgba(255, 255, 255, 0.14);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.topbar {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 18px 40px rgba(30, 41, 59, 0.08);
+}
+
+.topbar h1 {
+  font-size: 34px;
+}
+
+.topbar p {
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+button {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  padding: 28px;
+  border-radius: 26px;
+  color: white;
+  box-shadow: 0 18px 40px rgba(30, 41, 59, 0.12);
+}
+
+.stat-card h2 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.blue {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.purple {
+  background: linear-gradient(135deg, #7c3aed, #c084fc);
+}
+
+.green {
+  background: linear-gradient(135deg, #059669, #34d399);
+}
+
+.orange {
+  background: linear-gradient(135deg, #f97316, #facc15);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.panel,
+.jobs-panel {
+  background: white;
+  padding: 30px;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(30, 41, 59, 0.08);
+}
+
+.panel h2,
+.jobs-panel h2 {
+  margin-bottom: 18px;
+}
+
+.candidate-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.candidate-form input,
+.candidate-form select,
+.panel textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 15px;
+}
+
+.candidate-form button {
+  grid-column: span 2;
+}
+
+.panel textarea {
+  min-height: 155px;
+  margin: 18px 0;
+}
+
+.panel p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.jobs-panel {
+  margin-top: 26px;
+}
+
+.candidate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-radius: 18px;
+  background: #f8fafc;
+  margin-top: 14px;
+}
+
+.candidate-row p {
+  color: #6b7280;
+  margin: 5px 0;
+}
+
+.candidate-row small {
+  color: #374151;
+}
+
+.candidate-row span {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 8px 12px;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.empty {
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
   }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .stats-grid,
+  .content-grid,
+  .candidate-form {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-form button {
+    grid-column: span 1;
+  }
+
+  .candidate-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+.candidate-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.ai-result {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.report-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.auth-card p {
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+}
+
+.auth-card button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.auth-link {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  color: #4f46e5;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.topbar > div:last-child {
+  display: flex;
+  gap: 12px;
+}
+
+.report-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dashboard {
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+}
+
+.panel,
+.jobs-panel,
+.topbar {
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.panel:hover,
+.jobs-panel:hover {
+  transform: translateY(-4px);
+}
+
+button {
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 420px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  animation: popup 0.3s ease;
+}
+
+.modal-card h2 {
+  margin-bottom: 20px;
+}
+
+.modal-card p {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
+    opacity: 1;
   }
 }

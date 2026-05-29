@@ -1,70 +1,279 @@
-# Getting Started with Create React App
+# 🚀 SmartHire AI Recruitment Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![Java](https://img.shields.io/badge/Java-SpringBoot-orange)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![MySQL](https://img.shields.io/badge/Database-MySQL-green)
+![JWT](https://img.shields.io/badge/Auth-JWT-red)
+![AI](https://img.shields.io/badge/AI-Resume%20Analyzer-purple)
 
-In the project directory, you can run:
+### AI-Powered Full Stack Recruitment Management System
 
-### `npm start`
+Modern HR recruitment platform built using **Spring Boot, React.js, MySQL, JWT Authentication, and AI-powered resume analysis**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# 📌 Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+SmartHire is a professional AI-driven recruitment management platform designed to simplify hiring workflows for recruiters and HR teams.
 
-### `npm run build`
+The platform provides:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Secure Authentication
+* Candidate Management
+* AI Resume Analysis
+* Interview Scheduling
+* Recruitment Analytics
+* Job Management Dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# ✨ Key Features
 
-### `npm run eject`
+## 🔐 Authentication & Security
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* JWT Authentication
+* Role-Based Access
+* Secure Login & Registration
+* Protected Routes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 👥 Candidate Management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Add/Delete Candidates
+* Search & Filter Candidates
+* Candidate Status Management
+* Candidate Details Popup Modal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📌 Job Management
 
-## Learn More
+* Post Jobs
+* Delete Jobs
+* Manage Recruitment Openings
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🤖 AI Resume Analyzer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Resume Insight Generator
+* Skill Extraction
+* Job Match Score
+* Hiring Recommendations
+* Resume Upload UI
 
-### Code Splitting
+## 🎤 Interview Scheduler
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Schedule Interviews
+* Online/Offline Interview Mode
+* Delete Scheduled Interviews
 
-### Analyzing the Bundle Size
+## 📊 Analytics Dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Candidate Status Pie Chart
+* Jobs vs Candidates Bar Chart
+* Recruitment Reports
+* Interactive Dashboard UI
 
-### Making a Progressive Web App
+## 🎨 Modern UI/UX
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Responsive Dashboard
+* Interactive Components
+* Animated Modal Popup
+* Professional SaaS Design
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# 🛠️ Tech Stack
 
-### Deployment
+## Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* React.js
+* Axios
+* Recharts
+* React Icons
+* CSS3
 
-### `npm run build` fails to minify
+## Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Java
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* REST APIs
+
+## Database
+
+* MySQL
+
+---
+
+# 📂 Project Structure
+
+```bash
+SmartHire-AI-Recruitment-Platform/
+│
+├── smarthire-frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── index.js
+│   │
+│   └── package.json
+│
+├── smarthire-backend/
+│   ├── src/main/java/
+│   │   ├── controller/
+│   │   ├── service/
+│   │   ├── model/
+│   │   ├── repository/
+│   │   ├── security/
+│   │   └── config/
+│   │
+│   ├── src/main/resources/
+│   │   └── application.properties
+│   │
+│   └── pom.xml
+│
+└── README.md
+```
+
+# 📸 Screenshots
+
+## 🖥️ Register Page
+
+```bash
+screenshots/register_page.jpg
+```
+
+## 📊 Dashboard
+
+```bash
+screenshots/dashboard.jpg
+```
+
+## 👥 Candidates
+
+```bash
+screenshots/candidates.jpg
+```
+
+## 📌 Jobs
+
+```bash
+screenshots/jobs.jpg
+```
+
+## 🤖 AI Analyzer
+
+```bash
+screenshots/AI_Analyzer.jpg
+```
+
+## 🎤 Interviews
+
+```bash
+screenshots/interviews.jpg
+```
+
+## 📈 Reports
+
+```bash
+screenshots/reports.jpg
+```
+
+
+---
+
+# ⚙️ Installation Guide
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/SmartHire-AI-Recruitment-Platform.git
+```
+
+---
+
+## 2️⃣ Frontend Setup
+
+```bash
+cd smarthire-frontend
+npm install
+npm start
+```
+
+Frontend runs on:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+## 3️⃣ Backend Setup
+
+```bash
+cd smarthire-backend
+mvn spring-boot:run
+```
+
+Backend runs on:
+
+```bash
+http://localhost:8080
+```
+
+---
+
+## 4️⃣ Database Setup
+
+Create MySQL Database:
+
+```sql
+CREATE DATABASE smarthire_db;
+```
+
+Update:
+
+```bash
+application.properties
+```
+
+with your database credentials.
+
+---
+
+# 🔮 Future Enhancements
+
+* Resume PDF Parsing
+* AI Candidate Ranking
+* Email Notifications
+* Cloud Deployment
+* Calendar Integration
+* Admin Dashboard
+* Dark Mode
+* Resume ATS Score
+
+---
+
+# 👨‍💻 Author
+
+## Aryan Kumar
+
+Java Full Stack Developer passionate about building scalable AI-powered web applications using modern technologies.
+
+### 🔗 Connect With Me
+
+* LinkedIn:
+  https://www.linkedin.com/in/aryan-kumar-a760843a0
+
+* Portfolio:
+  https://aryan-kumar-portfolio-three.vercel.app/
+
+---
+
+# ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub.
