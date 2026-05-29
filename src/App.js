@@ -21,7 +21,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
-const API = "http://localhost:8080/api";
+const API = "https://smarthire-ai-recruitment-platform-production.up.railway.app/api";
 
 function AuthPage({ type }) {
   const navigate = useNavigate();
