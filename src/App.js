@@ -34,13 +34,19 @@ function AuthPage({ type }) {
     role: "HR",
   });
 
- const submitAuth = async (e) => {
-  e.preventDefault();
+const submitAuth = async () => {
 
   try {
-    const url = isLogin ? `${API}/auth/login` : `${API}/auth/register`;
+
+    const url = isLogin
+      ? `${API}/api/auth/login`
+      : `${API}/api/auth/register`;
+
     const body = isLogin
-      ? { email: form.email, password: form.password }
+      ? {
+          email: form.email,
+          password: form.password
+        }
       : form;
 
     const res = await axios.post(url, body);
@@ -49,10 +55,16 @@ function AuthPage({ type }) {
     localStorage.setItem("role", res.data.role);
     localStorage.setItem("name", res.data.name);
 
-    navigate("/dashboard");
+    alert("Success");
+
   } catch (error) {
-    alert("Login/Register failed. Check email, password, or duplicate account.");
+
     console.log(error);
+
+    alert(
+      error.response?.data ||
+      "Login/Register failed"
+    );
   }
 };
 
@@ -123,6 +135,11 @@ const [interviewForm, setInterviewForm] = useState({
   date: "",
   mode: "Online",
 });
+useEffect(() => {
+  fetchCandidates();
+}, []);
+
+
   const [showJobForm, setShowJobForm] = useState(false);
   const [resumeText, setResumeText] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
@@ -146,18 +163,26 @@ const [statusFilter, setStatusFilter] = useState("All");
     type: "Full Time",
   });
 
-  const fetchCandidates = async () => {
+ const fetchCandidates = async () => {
   try {
-    const res = await axios.get(`${API}/candidates`);
+
+    const res = await axios.get(
+      "http://localhost:8080/api/candidates"
+    );
+
+    console.log(res.data);
+
     setCandidates(res.data);
+
   } catch (error) {
+
     console.error("Candidate API error:", error);
+
   }
 };
-
 const fetchJobs = async () => {
   try {
-    const res = await axios.get(`${API}/jobs`);
+    const res = await axios.get("http://localhost:8080/api/jobs");
     setJobs(res.data);
   } catch (error) {
     console.error("Job API error:", error);
@@ -173,7 +198,7 @@ const fetchJobs = async () => {
   e.preventDefault();
 
   try {
-    await axios.post(`${API}/candidates`, candidateForm);
+    await axios.post("http://localhost:8080/api/candidates", candidateForm);
 
     setCandidateForm({
       fullName: "",
@@ -193,7 +218,7 @@ const fetchJobs = async () => {
 
 const deleteCandidate = async (id) => {
   try {
-    await axios.delete(`${API}/candidates/${id}`);
+    await axios.delete(`http://localhost:8080/api/candidates/${id}`);
     fetchCandidates();
   } catch (error) {
     alert("Candidate delete failed.");
@@ -203,7 +228,7 @@ const deleteCandidate = async (id) => {
 
 const updateCandidateStatus = async (candidate, newStatus) => {
   try {
-    await axios.post(`${API}/candidates`, {
+    await axios.post("http://localhost:8080/api/candidates", {
       ...candidate,
       status: newStatus,
     });
@@ -219,7 +244,7 @@ const updateCandidateStatus = async (candidate, newStatus) => {
   e.preventDefault();
 
   try {
-    await axios.post(`${API}/jobs`, jobForm);
+    await axios.post("http://localhost:8080/api/jobs", jobForm);
 
     setJobForm({
       title: "",
@@ -238,7 +263,7 @@ const updateCandidateStatus = async (candidate, newStatus) => {
 
 const deleteJob = async (id) => {
   try {
-    await axios.delete(`${API}/jobs/${id}`);
+    await axios.delete(`http://localhost:8080/api/jobs/${id}`);
     fetchJobs();
   } catch (error) {
     alert("Job delete failed.");
