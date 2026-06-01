@@ -1,85 +1,80 @@
 # 🚀 SmartHire AI Recruitment Platform
 
-<div align="center">
+An AI-powered full-stack recruitment management platform designed to simplify hiring workflows, candidate management, interview scheduling, and recruitment analytics.
 
-![Java](https://img.shields.io/badge/Java-SpringBoot-orange)
-![React](https://img.shields.io/badge/Frontend-React-blue)
-![MySQL](https://img.shields.io/badge/Database-MySQL-green)
-![JWT](https://img.shields.io/badge/Auth-JWT-red)
-![AI](https://img.shields.io/badge/AI-Resume%20Analyzer-purple)
-
-### AI-Powered Full Stack Recruitment Management System
-
-Modern HR recruitment platform built using **Spring Boot, React.js, MySQL, JWT Authentication, and AI-powered resume analysis**.
-
-</div>
+Built using **React.js**, **Spring Boot**, **MySQL**, and **JWT Authentication**.
 
 ---
 
-# 📌 Overview
+# 🌐 Live Demo
 
-SmartHire is a professional AI-driven recruitment management platform designed to simplify hiring workflows for recruiters and HR teams.
+Frontend Deployment (Vercel)
 
-The platform provides:
+https://smarthire-frontend-henna.vercel.app
 
-* Secure Authentication
-* Candidate Management
-* AI Resume Analysis
-* Interview Scheduling
-* Recruitment Analytics
-* Job Management Dashboard
+Backend Deployment (Railway)
+
+https://smarthire-ai-recruitment-platform-production.up.railway.app
+
+---
+
+# 📌 Project Overview
+
+SmartHire AI Recruitment Platform helps HR teams and recruiters manage the complete recruitment process in one place.
+
+The platform includes:
+
+* Secure authentication system
+* Candidate management
+* Job posting system
+* AI-based resume analyzer
+* Interview scheduling
+* Recruitment analytics dashboard
+* Candidate tracking & filtering
 
 ---
 
 # ✨ Key Features
 
-## 🔐 Authentication & Security
+## 🔐 Authentication System
 
-* JWT Authentication
-* Role-Based Access
-* Secure Login & Registration
-* Protected Routes
+* JWT-based secure login/register
+* Role-based authentication
+* Protected dashboard routes
 
 ## 👥 Candidate Management
 
-* Add/Delete Candidates
-* Search & Filter Candidates
-* Candidate Status Management
-* Candidate Details Popup Modal
+* Add candidates
+* Update candidate status
+* Delete candidates
+* Search and filter candidates
+* Candidate profile modal
 
 ## 📌 Job Management
 
-* Post Jobs
-* Delete Jobs
-* Manage Recruitment Openings
+* Create new job postings
+* View active jobs
+* Delete jobs
+* Department & location management
 
 ## 🤖 AI Resume Analyzer
 
-* Resume Insight Generator
-* Skill Extraction
-* Job Match Score
-* Hiring Recommendations
-* Resume Upload UI
+* Resume text analysis
+* AI-generated role suggestions
+* Match score prediction
+* Resume improvement suggestions
 
 ## 🎤 Interview Scheduler
 
-* Schedule Interviews
-* Online/Offline Interview Mode
-* Delete Scheduled Interviews
+* Schedule interviews
+* Online/Offline interview modes
+* Track scheduled interviews
 
-## 📊 Analytics Dashboard
+## 📊 Recruitment Analytics
 
-* Candidate Status Pie Chart
-* Jobs vs Candidates Bar Chart
-* Recruitment Reports
-* Interactive Dashboard UI
-
-## 🎨 Modern UI/UX
-
-* Responsive Dashboard
-* Interactive Components
-* Animated Modal Popup
-* Professional SaaS Design
+* Candidate status pie chart
+* Hiring analytics dashboard
+* Job vs candidate visualization
 
 ---
 
@@ -88,6 +83,7 @@ The platform provides:
 ## Frontend
 
 * React.js
+* React Router DOM
 * Axios
 * Recharts
 * React Icons
@@ -95,15 +91,20 @@ The platform provides:
 
 ## Backend
 
-* Java
 * Spring Boot
 * Spring Security
 * JWT Authentication
 * REST APIs
+* Maven
 
 ## Database
 
 * MySQL
+
+## Deployment
+
+* Vercel (Frontend)
+* Railway (Backend + MySQL)
 
 ---
 
@@ -113,90 +114,77 @@ The platform provides:
 SmartHire-AI-Recruitment-Platform/
 │
 ├── smarthire-frontend/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── services/
 │   │   ├── App.js
 │   │   ├── App.css
 │   │   └── index.js
-│   │
-│   └── package.json
+│   ├── package.json
+│   └── package-lock.json
 │
 ├── smarthire-backend/
 │   ├── src/main/java/
 │   │   ├── controller/
-│   │   ├── service/
-│   │   ├── model/
+│   │   ├── entity/
 │   │   ├── repository/
 │   │   ├── security/
-│   │   └── config/
+│   │   ├── dto/
+│   │   └── service/
 │   │
 │   ├── src/main/resources/
 │   │   └── application.properties
 │   │
 │   └── pom.xml
 │
+├── screenshots/
+│
 └── README.md
 ```
 
-# 📸 Screenshots
-
-## 🖥️ Register Page
-
-```bash
-screenshots/register_page.jpg
-```
-
-## 📊 Dashboard
-
-```bash
-screenshots/dashboard.jpg
-```
-
-## 👥 Candidates
-
-```bash
-screenshots/candidates.jpg
-```
-
-## 📌 Jobs
-
-```bash
-screenshots/jobs.jpg
-```
-
-## 🤖 AI Analyzer
-
-```bash
-screenshots/AI_Analyzer.jpg
-```
-
-## 🎤 Interviews
-
-```bash
-screenshots/interviews.jpg
-```
-
-## 📈 Reports
-
-```bash
-screenshots/reports.jpg
-```
-
-
 ---
 
-# ⚙️ Installation Guide
+# ⚙️ Backend Setup
 
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/SmartHire-AI-Recruitment-Platform.git
+git clone https://github.com/aryankumar2657-hub/SmartHire-AI-Recruitment-Platform.git
 ```
 
 ---
 
-## 2️⃣ Frontend Setup
+## 2️⃣ Backend Setup
+
+```bash
+cd smarthire-backend
+```
+
+### Configure application.properties
+
+```properties
+spring.datasource.url=YOUR_DATABASE_URL
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+jwt.secret=YOUR_SECRET
+```
+
+---
+
+## 3️⃣ Run Backend
+
+```bash
+mvn spring-boot:run
+```
+
+Backend runs on:
+
+```bash
+http://localhost:8080
+```
+
+---
+
+# 💻 Frontend Setup
 
 ```bash
 cd smarthire-frontend
@@ -212,68 +200,87 @@ http://localhost:3000
 
 ---
 
-## 3️⃣ Backend Setup
+# 🚀 Deployment Details
 
-```bash
-cd smarthire-backend
-mvn spring-boot:run
+## Frontend Deployment — Vercel
+
+### Environment Variable
+
+```env
+REACT_APP_API_URL=https://smarthire-ai-recruitment-platform-production.up.railway.app/api
 ```
 
-Backend runs on:
+### Deployment Steps
 
 ```bash
-http://localhost:8080
+git add .
+git commit -m "Frontend deployment"
+git push
+```
+
+Vercel automatically redeploys after every push.
+
+---
+
+## Backend Deployment — Railway
+
+### Environment Variables
+
+```env
+SPRING_DATASOURCE_URL=
+SPRING_DATASOURCE_USERNAME=
+SPRING_DATASOURCE_PASSWORD=
+JWT_SECRET=
+```
+
+### Deployment Process
+
+* Backend deployed using Railway
+* MySQL database hosted on Railway
+* Auto deployment connected with GitHub
+
+---
+
+# 📸 Screenshots
+
+Project screenshots available inside:
+
+```bash
+/screenshots
 ```
 
 ---
 
-## 4️⃣ Database Setup
+# 🔮 Future Improvements
 
-Create MySQL Database:
-
-```sql
-CREATE DATABASE smarthire_db;
-```
-
-Update:
-
-```bash
-application.properties
-```
-
-with your database credentials.
+* AI resume parsing using NLP
+* Email notifications
+* Real-time chat system
+* Applicant Tracking System (ATS)
+* Advanced analytics
+* Resume upload parser
+* Admin panel
+* Dark mode
 
 ---
 
-# 🔮 Future Enhancements
-
-* Resume PDF Parsing
-* AI Candidate Ranking
-* Email Notifications
-* Cloud Deployment
-* Calendar Integration
-* Admin Dashboard
-* Dark Mode
-* Resume ATS Score
-
----
-
-# 👨‍💻 Author
+# 👨‍💻 Developer
 
 ## Aryan Kumar
 
-Java Full Stack Developer passionate about building scalable AI-powered web applications using modern technologies.
+Java Full Stack Developer passionate about building scalable AI-powered web applications.
 
-### 🔗 Connect With Me
+### 🔗 LinkedIn
 
-* LinkedIn:
-  https://www.linkedin.com/in/aryan-kumar-a760843a0
+https://www.linkedin.com/in/aryan-kumar-a760843a0
 
-* Portfolio:
-  https://aryan-kumar-portfolio-three.vercel.app/
+### 🔗 GitHub
+
+https://github.com/aryankumar2657-hub
 
 ---
 
-# ⭐ Support
+# ⭐ Feedback
 
-If you like this project, give it a ⭐ on GitHub.
+If you like this project, please give it a ⭐ on GitHub and share your feedback.
+s
